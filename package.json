@@ -1,0 +1,72 @@
+{
+  "name": "postcss-tw-auto-reference",
+  "version": "0.1.0",
+  "description": "PostCSS plugin that automatically inserts Tailwind CSS @reference directives in CSS files using @apply",
+  "keywords": [
+    "auto-reference",
+    "css",
+    "postcss",
+    "postcss-plugin",
+    "tailwind",
+    "tailwindcss"
+  ],
+  "homepage": "https://github.com/awaiden/postcss-tw-auto-reference#readme",
+  "bugs": {
+    "url": "https://github.com/awaiden/postcss-tw-auto-reference/issues"
+  },
+  "license": "MIT",
+  "author": "Halil Aydın (https://github.com/awaiden)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awaiden/postcss-tw-auto-reference.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "bun run build",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^26.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "oxfmt": "^0.61.0",
+    "oxlint": "^1.76.0",
+    "postcss": "^8.5.25",
+    "tsdown": "^0.22.14"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,cts,mts}": [
+      "oxlint --fix",
+      "oxfmt"
+    ],
+    "*.{json,md}": [
+      "oxfmt"
+    ]
+  }
+}
