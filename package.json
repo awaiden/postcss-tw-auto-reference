@@ -69,5 +69,8 @@
     "*.{json,md}": [
       "oxfmt"
     ]
+  },
+  "engines": {
+    "node": ">=20.3.0"
   }
 }
