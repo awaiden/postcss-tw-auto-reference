@@ -1,6 +1,6 @@
 {
   "name": "postcss-tw-auto-reference",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PostCSS plugin that automatically inserts Tailwind CSS @reference directives in CSS files using @apply",
   "keywords": [
     "auto-reference",
