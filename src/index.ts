@@ -5,13 +5,13 @@ export interface Options {
   /**
    * The path to the global CSS file that contains Tailwind's base styles.
    * This file will be automatically referenced in other CSS files that use Tailwind's `@apply` directive.
-   * @default 'src/app/global.css'
+   * @default 'app/globals.css'
    */
   globalCssPath?: string;
 }
 
 const postcssTailwindAutoReference: PluginCreator<Options> = (opts = {}) => {
-  const targetGlobalCss = opts.globalCssPath || "src/app/global.css";
+  const targetGlobalCss = opts.globalCssPath || "app/globals.css";
 
   return {
     postcssPlugin: "postcss-tailwind-auto-reference",
